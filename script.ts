@@ -18,7 +18,15 @@ str = "some";
 
 const person:readonly[string, number] = ['Max', 21];
 
-// 6,7,8 not done
+enum status{
+    REST = "resting",
+    "ready" = "yes",
+}
+console.log(status.REST)
+
+const stringnumber:string | number = "hello"
+
+const enabledisable: "enable" | "disable" = "enable"
 
 function showMessage(message:string) {
  console.log(message);
@@ -33,7 +41,35 @@ function customError() {
 }
 
 
-// 10 not done
+
+type Page = {
+ title: string;
+ likes: number;
+ accounts: string[];
+ status: "open" | "close";
+ details?: {
+ createAt: Date;
+ updateAt: Date;
+ };
+}
+
+const page1:Page = {
+ title: 'The awesome page',
+ likes: 100,
+ accounts: ['Max', 'Anton', 'Nikita'],
+ status: 'open',
+ details: {
+   createAt: new Date('2021-01-01'),
+   updateAt: new Date('2021-05-01'),
+ }
+}
+
+const page2:Page = {
+ title: 'Python or Js',
+ likes: 5,
+ accounts: ['Alex'],
+ status: 'close',
+}
 
 
 // 2. done
